@@ -1,5 +1,12 @@
 class ProductsController < ApplicationController
     def index
-        @message = "Products Controller"
+        @products = Product.all
+        render json: @products
     end
+
+    def show
+        @product = Product.find(params[:id])
+        render json: @product
+    end
+    
 end
