@@ -1,0 +1,26 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  adapter: mysql
+  encoding: utf8
+  username: root
+  password: abc12345
+  host: 127.0.0.1
+  port: 3306
+
+development:
+  <<: *default
+  database: salestock_dev
+
+test:
+  <<: *default
+  database: salestock_test
+
+production:
+  <<: *default
+  database: salestock_prod
+  password: some_password
