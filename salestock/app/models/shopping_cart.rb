@@ -1,5 +1,4 @@
 class ShoppingCart < ActiveRecord::Base
-    belongs_to :products
-
-    validates :product_id, presence: true
+    has_many :shopping_cart_details
+    accepts_nested_attributes_for :shopping_cart_details
 end

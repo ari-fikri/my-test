@@ -37,3 +37,33 @@ maltese_cracker = Product.find_or_create_by(name: 'Cracker Maltese 400gr') do |p
     p.category = fnb
     p.price = 26000
 end
+
+#Shopping Carts
+purchase_01 = ShoppingCart.find_or_create_by(id: 1)
+
+purchase_01_item_01 = ShoppingCartDetail.find_or_create_by(:shopping_cart => purchase_01, :product => baju_anak_01) do |pc|
+    pc.product = baju_anak_01
+    pc.qty = 2
+end
+
+purchase_01_item_02 = ShoppingCartDetail.find_or_create_by(:shopping_cart => purchase_01, :product => baju_anak_02) do |pc|
+    pc.product = baju_anak_02
+    pc.qty = 5
+end
+
+purchase_02 = ShoppingCart.find_or_create_by(id: 2)
+
+purchase_02_item_01 = ShoppingCartDetail.find_or_create_by(:shopping_cart => purchase_02, :product => syrup_cocopandan) do |pc|
+    pc.product = syrup_cocopandan
+    pc.qty = 3
+end
+
+purchase_02_item_02 = ShoppingCartDetail.find_or_create_by(:shopping_cart => purchase_02, :product => maltese_cracker) do |pc|
+    pc.product = maltese_cracker
+    pc.qty = 2
+end
+
+purchase_02_item_03 = ShoppingCartDetail.find_or_create_by(:shopping_cart => purchase_02, :product => baju_anak_01) do |pc|
+    pc.product = baju_anak_01
+    pc.qty = 1
+end
